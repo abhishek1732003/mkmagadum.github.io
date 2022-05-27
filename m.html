@@ -1,0 +1,427 @@
+<html>
+<head>
+	  <link rel="shortcut icon" type="png" href="../images/v.png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>magadum college</title>
+	<link rel="stylesheet" type="text/css" href="subjects.css">
+	<script type="text/javascript" src="../script.js"></script>
+</head>
+<style>
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background: #FFF;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*SCROLLBAR Styling*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FA4B37;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #DF2771; 
+}
+
+/*NAVIGATION BAR*/
+.nav
+{
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 2%;
+	position: fixed;
+	top: 0px;
+	z-index: 10;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.nav li, a, button
+{
+	float: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	color: #2E3D49;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+.nav ul li img {
+	width: 20px;
+	margin-right: 10px;
+	transform: translateY(5px);
+	padding-top: 5px;
+}
+
+.nav ul li 
+{
+	list-style: none;
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+.nav ul li a
+{
+	transition: all 0.3s ease 0s;
+}
+
+.nav ul li a:hover
+{
+	color: #FA4B37;
+}
+
+.nav button
+{
+	padding: 9px 25px;
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	transition: all 0.3s ease 0s;
+}
+#srchbtn {
+	padding: 9px 20px;
+}
+#srchbtn img {
+	width: 15px;
+	filter: brightness(100);
+}
+.nav button:hover
+{
+	opacity: .9;
+}
+.nav .search
+{
+	float: right;
+}
+.nav .search .srch
+{
+	font-size: 13px;
+	width: 300px;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #FA4B37;
+	padding: 9px;
+}
+.nav .search button
+{
+	margin-right: 5px;
+	float: right;
+	margin-left: 10px;
+}
+.nav .switch-tab {
+	cursor: pointer;
+	visibility: hidden;
+}
+.nav .switch-tab img {
+	width: 20px;
+}
+.nav .check-box {
+	cursor: pointer;
+	visibility: hidden;
+}
+
+/*TITLE*/
+.title {
+	margin-top: 150px;
+	margin-left: 100px;
+}
+.title span{
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 60px;
+	color: #2E3D49;
+}
+.title .shortdesc {
+	padding: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	color: #2E3D49;
+	margin-bottom: 50px;
+}
+
+/*Quick Links*/
+.course {
+	display: grid;
+	justify-content: center;
+}
+
+.cbox {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.cbox .det {
+	height: 60px;
+	margin: 10px;
+	background: #fff;
+	cursor: pointer;
+	border-radius: 50px;
+}
+.cbox .det a{
+	justify-content: space-around;
+	width: 100%;
+	padding: 20px;
+	border-radius: 50px;
+	border: 1px solid #FA4B37;
+	font-size: 15px;
+	color: #272529;
+	font-family: cursive;
+	text-decoration: none;
+}
+
+.cbox .det a:hover{
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	color: white;
+}
+
+.inbt {
+	padding: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	color: #2E3D49;
+	margin: 100px;
+	margin-bottom: 50px;
+}
+
+/*COURSES AVAILABLE*/
+.ccard {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.ccardbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.dcard {
+	margin: 10px;
+	width: 300px;
+	height: 200px;
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.dcard .fpart {
+	width: inherit;
+	height: 150px;
+	color: #000;
+	text-align: left;
+	overflow: hidden;
+}
+.dcard .fpart img {
+	width: 100%;
+	height: 100%;
+}
+
+.dcard .spart {
+	padding: 10px;
+	padding-right: 0px;
+	color: #fff;
+	text-align: left;
+	cursor: pointer;
+}
+.dcard .spart img {
+	width: 20px;
+	margin-left: 170px;
+	cursor: pointer;
+	/* transform: rotate(180deg); */
+}
+
+.dcard:hover .fpart img{
+	transition: .8s ease;
+	transform: scale(1.2);
+}
+
+/*Small Titles for  Topics*/
+.title2 {
+	position: relative;
+	padding-top: 150px;
+	margin-left: 100px;
+}
+.title2 span{
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	color: #2E3D49;
+}
+.title2 .shortdesc2 {
+	padding: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	color: #2E3D49;
+	margin-bottom: 10px;
+}
+
+/*Videos Section*/
+.ccardbox2 {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+
+</style>
+<body>
+
+<!-- NAVIGATION -->
+	<header>
+		<div class="nav" id="nav">
+			<div id="learned-logo">
+			<a href="../index.html"><img src="../images/v.png" style="width: 40px;"></a></div>
+			<div class="switch-tab" id="switch-tab" onclick="switchTAB()"><img src="../images/icon/menu.png"></div>
+			<ul id="list-switch">
+				
+			
+		</div>
+	</header>
+
+
+<!-- Main Title of the Page -->
+	<div class="title">
+		<span>Prepare for GATE Exams on BigB</span>
+		<div class="shortdesc">
+			<p>Learn from LearnEd for better higher studies in<br> Indian Institutes of Technologies(IIT)</p>
+		</div>
+	</div>
+
+
+<!-- Some KeyWords related to topic -->
+
+
+<!-- Courses Available -->
+	<div class="inbt">
+	11111111111111111111111111111111
+	</div>
+
+	<div class="ccard">
+	<center>
+		<div class="ccardbox">
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/math.jpg"></div>
+				<a href="#math"><div class="spart">2 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/digital.jpg"></div>
+				<a href="#digital"><div class="spart">5 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/coaa.jpg"></div>
+				<a href="#coaa"><div class="spart">3 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/database.jpg"></div>
+				<a href="#database"><div class="spart">3 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/data-algo.jpg"></div>
+				<a href="computer_courses.html#data"><div class="spart">6 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/compiler.jpg"></div>
+				<a href="#compiler"><div class="spart">2 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/os.jpg"></div>
+				<a href="#os"><div class="spart">1 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+			<div class="dcard">
+				<div class="fpart"><img src="../images/courses/cn.jpg"></div>
+				<a href="#cn"><div class="spart">3 Courses <img src="../images/icon/dropdown.png"></div></a>
+			</div>
+		</div>
+	</center>
+	</div>
+
+
+<!-- Videos on ENGINEERING MATHEMATICS Lectures -->
+
+	<div class="title2" id="math">
+		<span>Eeeeeeeeeeeeeeeeee</span>
+		<div class="shortdesc2">
+			<p>22222222222222222222222222</p>
+		</div>
+	</div>
+	
+	<center>
+		<div class="ccardbox2">
+			<div class="dcard2"><span class="tag" >1/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/PipUyqfCzBs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >2/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/I5OisgXGDE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >3/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/xxGyTHWrHZg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >4/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/xxGyTHWrHZg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		
+			<div class="dcard2"><span class="tag" >5/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/xxGyTHWrHZg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >6/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/V6rnYB1Defc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >7/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/2Ex-RHQHGdE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="dcard2"><span class="tag" >8/8</span>
+				<div class="fpart2"><img src="../images/courses/math.jpg">
+					<iframe src="https://www.youtube.com/embed/6Kx5wILTv3s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</center>
+<br><br>
+	<div class="click-me">
+		<a href="" target="_blank">Click Here to Watch full playlist</a>
+	</div>
+
+
+
+<!-- Videos on DIGITAL LOGIC Lectures -->
+
+
+
+
+</body>
